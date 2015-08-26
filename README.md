@@ -123,10 +123,9 @@ uses SHA256.
 <a name="implementation"/>
 #### "Where can I get an implementation of PolyPasswordHasher?"
 
-This repository, contains the [PolyPasswordHasher Python reference
-implementation](https://github.com/PolyPasswordHasher/PolyPasswordHasher/tree/master/python-reference-implementation).   This is written for
-readability and not performance or practical use.   There is also a [C
-implementation](https://github.com/PolyPasswordHasher/PolyPasswordHasher-C)
+This repository contains a JavaScript implementation.  There are also [Python]
+(https://github.com/PolyPasswordHasher/PolyPasswordHasher/tree/master/python-reference-implementation) and [C
+implementations](https://github.com/PolyPasswordHasher/PolyPasswordHasher-C)
 available.
 
 We would love to see a PHP implementation for common frameworks because many
