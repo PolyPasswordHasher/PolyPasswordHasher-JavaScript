@@ -114,10 +114,7 @@ password per site.
 <a name="hashalg"/>
 #### "What secure hash algorithm does PolyPasswordHasher use?"
 
-Any secure hashing algorithm can be used with PolyPasswordHasher.   The [Python
-reference
-implementation](https://github.com/PolyPasswordHasher/PolyPasswordHasher/tree/master/python-reference-implementation)
-uses SHA256.
+Any secure hashing algorithm can be used with PolyPasswordHasher.   The JavaScript and [Python](https://github.com/PolyPasswordHasher/PolyPasswordHasher/tree/master/python-reference-implementation) implementations use SHA256.
 
 
 <a name="implementation"/>
