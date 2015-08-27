@@ -39,6 +39,26 @@ use this.   There are free, open source [implementations
 available](#implementation) for PolyPasswordHasher. So hopefully this technique
 will be coming to your favorite service to protect your password!
 
+<a name="installation"/>
+### "How do I install and run the JavaScript implementation of PolyPasswordHasher?"
+
+To build and run the test files in this folder, you need to install [NodeJS](https://nodejs.org/download/) and [secrets.js](https://github.com/amper5and/secrets.js/).
+Once you have NodeJs, you can install secrets.js on the command line by running
+
+```
+$ npm install secrets.js
+```
+
+in the folder containing these files or your home directory.
+
+To build and run the test files, go into the directory containing these files and run
+
+```
+$ node testpolypasswordhasher.js
+``` 
+
+or whichever test file you choose to run. Note: if your computer runs on Linux, you may have to run "nodejs testpolypasswordhasher.js" instead of the example above.
+
 
 FAQ
 ===
@@ -132,25 +152,6 @@ systems](http://blog.passwordresearch.com/2013/02/passwords-found-in-wild-for-ja
 Please contact us if you have an implementation of PolyPasswordHasher that you
 would like us to list.
 
-<a name="installation"/>
-#### "How do I install and run the JavaScript implementation of PolyPasswordHasher?"
-
-To build and run the test files in this folder, you need to install [NodeJS](https://nodejs.org/download/) and [secrets.js](https://github.com/amper5and/secrets.js/).
-Once you have NodeJs, you can install secrets.js on the command line by running
-
-```
-$ npm install secrets.js
-```
-
-in the folder containing these files or your home directory.
-
-To build and run the test files, go into the directory containing these files and run
-
-```
-$ node testpolypasswordhasher.js
-``` 
-
-or whichever test file you choose to run.
 
 <a name="moreinfo"/>
 #### "How do I get more information about PolyPasswordHasher?"

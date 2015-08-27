@@ -1,6 +1,10 @@
 /* Tests the PolyPasswordHasher library under normal operation (i.e. not 
 *  isolated validation). Should print nothing if everything goes well.
 */
+var assert = function (condition) { 
+    if (!condition)
+        throw Error("Assert failed");
+};
 
 var PPH = require("./polypasswordhasher.js");
 var THRESHOLD = 10;
@@ -78,9 +82,3 @@ assert(pph.is_valid_login('alice','kitten'));
 
 pph.create_account('moe','tadpole',1);
 pph.create_account('larry','fish',0);
-
-
-var assert = function (condition) { 
-    if (!condition)
-        throw Error("Assert failed");
-};
