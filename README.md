@@ -1,4 +1,4 @@
-PolyPasswordHasher12345
+PolyPasswordHasher
 ============
 
 A password storage scheme that prevents an attacker from cracking passwords individually.   
