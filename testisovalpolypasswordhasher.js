@@ -1,3 +1,7 @@
+/* Tests the PolyPasswordHasher library under normal operation (i.e. not 
+*  isolated validation). Should print nothing if everything goes well.
+*/
+
 var PPH = require("./polypasswordhasher.js");
 var THRESHOLD = 10;
 var pph = new PPH(THRESHOLD, undefined, 2);
@@ -12,12 +16,18 @@ pph.create_account('charlie','velociraptor',1);
 pph.create_account('dennis','menace',0);
 pph.create_account('eve','iamevil',0);
 
-console.log("alice+kitten: "+pph.is_valid_login('alice','kitten')) //SN16 T bc valid share -ok
-console.log("admin+correct horse: "+pph.is_valid_login('admin','correct horse')) //SN1 T bc valid share -ok
-console.log("alice+nyancat: "+pph.is_valid_login('alice','nyancat!')) //SN16 F nothing worked -ok
-console.log("dennis+menace: "+pph.is_valid_login('dennis','menace')) //SN0 T bc password encrypts the right way -ok
-console.log("dennis+password: "+pph.is_valid_login('dennis','password')) //SN0 F bc shielded account but pswd doesn't encrypt the same way -ok
-console.log("eve+iamevil: "+pph.is_valid_login('eve','iamevil')); //T bc password encrypts the right way
+//T: valid share
+assert(pph.is_valid_login('alice','kitten')==true);
+//T: valid share
+assert(pph.is_valid_login('admin','correct horse')==true);
+//F: doesn't pass any of the checks
+assert(pph.is_valid_login('alice','nyancat!')==false);
+//T: password encrypts the right way
+assert(pph.is_valid_login('dennis','menace')==true);
+//F: pswd doesn't encrypt the same way
+assert(pph.is_valid_login('dennis','password')==false);
+//T: password encrypts the right way
+assert(pph.is_valid_login('eve','iamevil')==true);
 
 pph.write_password_data('securepasswords');
 
@@ -29,21 +39,19 @@ pph.create_account("bootstrapper", 'password', 0);
 
 var ok = true;
 try{
-	console.log("T: "+pph.is_valid_login("bootstrapper",'password'));
-	console.log("F: "+pph.is_valid_login("bootstrapper",'nopassword'));
+	assert(pph.is_valid_login("bootstrapper",'password'));
+	assert("F: "+pph.is_valid_login("bootstrapper",'nopassword'));
 }
 catch(e){
 	console.log("Bootstrap account creation failed.");
 	ok = false;	
 }
-if (ok)
-	console.log("bootstrap account logins can be checked");
 
 
 try{
-	console.log("T: "+pph.is_valid_login('alice','kitten'));
-	console.log("T: "+pph.is_valid_login('admin','correct horse'));
-	console.log("F: "+pph.is_valid_login('alice','nyancat!'));
+	assert(pph.is_valid_login('alice','kitten')==true);
+	assert(pph.is_valid_login('admin','correct horse')==true);
+	assert(pph.is_valid_login('alice','nyancat!')===false);
 }
 catch(e){
 	console.log("Isolated validation but it is still bootstrapping!!!");
@@ -55,7 +63,6 @@ try{
 }
 catch(e){
 	//Should be bootstrapping...
-	console.log("This is right");
 	ok=false;
 }
 if (ok){
@@ -63,12 +70,17 @@ if (ok){
 }
 
 pph.unlock_password_data([['admin','correct horse'],
-						['root','battery staple'],
-						['bob','puppy'],
-						['dennis','menace']]);
+		['root','battery staple'],
+		['bob','puppy'],
+		['dennis','menace']]);
 
-//alice has a cat fetish
-console.log(pph.is_valid_login('alice','kitten'));
+assert(pph.is_valid_login('alice','kitten'));
 
 pph.create_account('moe','tadpole',1);
 pph.create_account('larry','fish',0);
+
+
+var assert = function (condition) { 
+    if (!condition)
+        throw Error("Assert failed");
+};

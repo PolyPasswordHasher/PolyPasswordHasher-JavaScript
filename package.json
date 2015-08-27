@@ -1,0 +1,20 @@
+{
+  "name": "pph",
+  "version": "0.0.1",
+  "description: "A password storage scheme that prevents an attacker from cracking passwords individually.",
+  "keywords": ["shamir secret sharing","password storage","password security","poly password hasher"],
+  "homepage": "https://polypasswordhasher.poly.edu/" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/echenran/PolyPasswordHasher-JavaScript.git"
+  },
+  "license": "MIT",
+  "files": ["polypasswordhasher.js","testpolypasswordhasher.js","testisovalpolypasswordhasher.js"],
+  "main": "polypasswordhasher.js",
+  "dependencies": {
+    "fs": "0.12.7",
+    "secrets.js": "0.1.8",
+    "crypto": "0.0.3"
+  }
+}

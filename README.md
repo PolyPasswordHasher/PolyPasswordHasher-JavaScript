@@ -1,13 +1,13 @@
-PolyPasswordHasher
+PolyPasswordHasher12345
 ============
 
-A Password storage scheme that prevents an attacker from cracking passwords individually.   
+A password storage scheme that prevents an attacker from cracking passwords individually.   
 
 
 Summary
 =======
 
-Password database disclousures have caused companies billions of dollars in
+Password database disclosures have caused companies billions of dollars in
 damages.   Typically a password server securely obtains a password from the
 user, performs a salted hash on the password, and then checks if that entry
 matches what is in the password database under that user name.   Hackers have
@@ -132,6 +132,17 @@ systems](http://blog.passwordresearch.com/2013/02/passwords-found-in-wild-for-ja
 Please contact us if you have an implementation of PolyPasswordHasher that you
 would like us to list.
 
+<a name="installation"/>
+#### "How do I install and run the JavaScript implementation of PolyPasswordHasher?"
+
+To build and run the test files in this folder, you need to install [secrets.js](https://github.com/amper5and/secrets.js/).
+You can do this on the command line by running
+
+```
+$ npm install secrets.js
+```
+
+in the folder containing these files or your home directory.
 
 <a name="moreinfo"/>
 #### "How do I get more information about PolyPasswordHasher?"
