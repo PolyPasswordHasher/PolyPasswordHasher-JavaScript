@@ -40,7 +40,7 @@ available](#implementation) for PolyPasswordHasher. So hopefully this technique
 will be coming to your favorite service to protect your password!
 
 <a name="installation"/>
-### "How do I install and run the JavaScript implementation of PolyPasswordHasher?"
+### Installation and Running
 
 To build and run the test files in this folder, you need to install [NodeJS](https://nodejs.org/download/) and [secrets.js](https://github.com/amper5and/secrets.js/).
 Once you have NodeJs, you can install secrets.js on the command line by running
