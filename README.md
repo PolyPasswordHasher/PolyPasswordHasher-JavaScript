@@ -135,14 +135,22 @@ would like us to list.
 <a name="installation"/>
 #### "How do I install and run the JavaScript implementation of PolyPasswordHasher?"
 
-To build and run the test files in this folder, you need to install [secrets.js](https://github.com/amper5and/secrets.js/).
-You can do this on the command line by running
+To build and run the test files in this folder, you need to install [NodeJS](https://nodejs.org/download/) and [secrets.js](https://github.com/amper5and/secrets.js/).
+Once you have NodeJs, you can install secrets.js on the command line by running
 
 ```
 $ npm install secrets.js
 ```
 
 in the folder containing these files or your home directory.
+
+To build and run the test files, go into the directory containing these files and run
+
+```
+$ node testpolypasswordhasher.js
+``` 
+
+or whichever test file you choose to run.
 
 <a name="moreinfo"/>
 #### "How do I get more information about PolyPasswordHasher?"
